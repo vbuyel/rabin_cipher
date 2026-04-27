@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lab3 Buyel — Криптосистема Рабина</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=save" />
+</head>
+<body>
+  <div class="cipher-card">
+    <div class="cipher-title">Криптосистема Рабина</div>
+
+    <div class="form-row">
+      <div class="label">Параметр p</div>
+      <input class="input-text" id="p_input" type="text" placeholder="Простое p ≡ 3 (mod 4), напр. 4099" />
+    </div>
+
+    <div class="form-row">
+      <div class="label">Параметр q</div>
+      <input class="input-text" id="q_input" type="text" placeholder="Простое q ≡ 3 (mod 4), напр. 4111" />
+    </div>
+
+    <div class="form-row">
+      <div class="label">Параметр b</div>
+      <input class="input-text" id="b_input" type="text" placeholder="Число 0 < b < n, напр. 17" />
+    </div>
+
+    <!-- Загрузка файла -->
+    <div class="form-row">
+      <div class="label">Файл</div>
+      <input type="file" id="file_input" hidden />
+      <button class="btn-read-from-file" id="btn_choose_file" type="button">Выбрать файл</button>
+      <span class="file-name" id="file_name">файл не выбран</span>
+    </div>
+
+    <!-- Кнопки -->
+    <div class="actions">
+      <button class="action-btn-encrypt" type="button">ШИФРОВАТЬ</button>
+      <button class="action-btn-decrypt" type="button">ДЕШИФРОВАТЬ</button>
+      <button class="action-btn-clear" type="button">ОЧИСТИТЬ</button>
+      <button class="material-symbols-outlined" type="button" id="btn_save" title="Сохранить результат">save</button>
+    </div>
+
+    <!-- Сообщения об ошибках -->
+    <div class="error-messages">
+      <div></div>
+    </div>
+
+    <!-- Области вывода -->
+    <div class="output-section" id="output_section" style="display:none;">
+      <div class="field-label">Исходный файл (десятичные):</div>
+      <div class="binary-output" id="source_output"></div>
+
+      <div class="field-label">Результат (десятичные числа):</div>
+      <div class="binary-output" id="result_output"></div>
+    </div>
+  </div>
+
+  <script type="module" src="ciphers/main.js"></script>
+</body>
+</html>
